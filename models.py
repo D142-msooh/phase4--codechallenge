@@ -12,14 +12,7 @@ db = SQLAlchemy(metadata=metadata)
 class Hero(db.Model, SerializerMixin):
     __tablename__ = 'heroes'
     
-    serialize_rules = ('-hero_powers.hero',)
     
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    super_name = db.Column(db.String(100), nullable=False)
-    
-    hero_powers = db.relationship('HeroPower', back_populates='hero', cascade='all, delete-orphan')
-
 class Power(db.Model, SerializerMixin):
     __tablename__ = 'powers'
     
