@@ -12,7 +12,8 @@ except Exception:
     class Mail:
         def __init__(self, *args, **kwargs):
             pass
-        
+        def send(self, msg):
+            return None
 
     class Message:
         def __init__(self, subject=None, recipients=None, body=None):
