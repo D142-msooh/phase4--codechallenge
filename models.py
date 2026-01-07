@@ -31,7 +31,12 @@ class Power(db.Model, SerializerMixin):
     
     hero_powers = db.relationship('HeroPower', back_populates='power', cascade='all, delete-orphan')
     
-    
+    @validates('description')
+    def validate_description(self, key, description):
+        if not description or len(description) < 20:
+            raise ValueError("Description must be at least 20 characters long")
+        return description
+
 class HeroPower(db.Model, SerializerMixin):
     __tablename__ = 'hero_powers'
     

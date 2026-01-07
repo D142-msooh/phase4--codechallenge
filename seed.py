@@ -9,16 +9,7 @@ with app.app_context():
     
     print("Seeding heroes...")
     heroes = [
-        Hero(name="Kamala Khan", super_name="Ms. Marvel"),
-        Hero(name="Doreen Green", super_name="Squirrel Girl"),
-        Hero(name="Gwen Stacy", super_name="Spider-Gwen"),
-        Hero(name="Janet Van Dyne", super_name="The Wasp"),
-        Hero(name="Wanda Maximoff", super_name="Scarlet Witch"),
-        Hero(name="Carol Danvers", super_name="Captain Marvel"),
-        Hero(name="Jean Grey", super_name="Dark Phoenix"),
-        Hero(name="Ororo Munroe", super_name="Storm"),
-        Hero(name="Kitty Pryde", super_name="Shadowcat"),
-        Hero(name="Elektra Natchios", super_name="Elektra")
+        
     ]
     db.session.add_all(heroes)
     
